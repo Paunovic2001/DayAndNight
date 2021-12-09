@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3229824301508385407}
   - component: {fileID: 3229824301508385400}
   - component: {fileID: 3229824301508385406}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: PlatformDay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.44, y: 0.48}
+    oldSize: {x: 1.5, y: 0.5}
     newSize: {x: 1.44, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
     m_Bits: 64
   localWaypoints:
   - {x: 0, y: 0, z: 0}
-  - {x: -7.65, y: 2.24, z: 0}
+  - {x: 0, y: 0, z: 0}
   speed: 2
   cyclic: 0
   waitTime: 1.5
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3801264530499693698, guid: 3edd5cdce1b59e34984cdf08d6f1639a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

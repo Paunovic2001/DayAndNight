@@ -24,7 +24,7 @@ public class MenuController : MonoBehaviour
     {
         Time.timeScale = 1f;
         
-        LoadVolume();
+        //LoadVolume();
     }
     private void Update()
     {
