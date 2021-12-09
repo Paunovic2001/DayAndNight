@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main_menu.unity
+    guid: d62e28e5e0bc1c848adf525ab8bc7c4c
+  - enabled: 1
     path: Assets/Antonio/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: 700614959cf1e1340bd3ba6bd79388a2
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: c81d4b7de5defb74ea29f2aba939d3fb
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: b9b123acfbeb6b84889946997b274f35
   m_configObjects: {}

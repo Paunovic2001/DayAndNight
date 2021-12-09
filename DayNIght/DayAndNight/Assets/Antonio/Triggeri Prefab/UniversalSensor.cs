@@ -52,6 +52,7 @@ public class UniversalSensor : MonoBehaviour
                 //{
                     doorOrPlatform.GetComponent<SawsMove>().stayOpen = stayTurnedOn;
                     doorOrPlatform.GetComponent<SawsMove>().MoveBladeTo();
+                    Debug.Log("start blade movement");  
                     if(spin == false)
                     {
                         doorOrPlatform.GetComponent<SawsMove>().StopSpinning();

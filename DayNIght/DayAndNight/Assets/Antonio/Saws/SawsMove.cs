@@ -63,7 +63,8 @@ public class SawsMove : MonoBehaviour
                 //}
                 break;
             }
-            transform.position += new Vector3(0, Time.deltaTime * moveSpeed, 0);
+            //transform.position += new Vector3(0, Time.deltaTime * moveSpeed, 0);
+            transform.position = Vector3.MoveTowards(transform.position, globalEndPos, Time.deltaTime * moveSpeed);
             yield return new WaitForEndOfFrame();
         }
         StopSpinning();
@@ -83,7 +84,8 @@ public class SawsMove : MonoBehaviour
                 isOpened = false;
                 break;
             }
-            transform.position += new Vector3(0, Time.deltaTime * moveSpeed * -1, 0);
+            //transform.position += new Vector3(0, Time.deltaTime * moveSpeed * -1, 0);
+            transform.position = Vector3.MoveTowards(transform.position, globalStartPos, Time.deltaTime * moveSpeed);
             yield return new WaitForEndOfFrame();
         }
     }

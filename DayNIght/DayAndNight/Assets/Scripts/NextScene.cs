@@ -24,7 +24,7 @@ public class NextScene : MonoBehaviour
         nextScene = SceneManager.GetActiveScene().buildIndex + 1;
         Debug.Log(nextScene);
         SceneManager.LoadScene(nextScene);
-        if(SceneManager.GetActiveScene().buildIndex == 4)
+        if(SceneManager.GetActiveScene().buildIndex == SceneManager.sceneCountInBuildSettings - 1)
         {
             Debug.Log("Win!");
         }

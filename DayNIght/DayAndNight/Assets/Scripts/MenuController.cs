@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     public GameObject pauseMenu;
-    
-    public GameObject important;
-    
+    public GameObject winMenu;
+
+    public GameObject inGameMusicLoop;
+
     bool pauseOn;
 
     public Slider musicSlider;
@@ -21,31 +22,30 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
+        if (inGameMusicLoop.GetComponent<MusicLoop>().dontDestroyOnLoad == true)
+        {
+            DontDestroyOnLoad(inGameMusicLoop);
+        }
         LoadVolume();
-        DontDestroyOnLoad(important);
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha0))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             PlayerPrefs.DeleteAll();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (pauseOn == true)
-            {
-                pauseOn = false;
-                pauseMenu.SetActive(false);
-                Time.timeScale = 1;
-            }
-            else
-            {
-                pauseOn = true;
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0;
-            }
+            Pause();
         }
+    }
+
+    public void InstantiateMusic()
+    {
+        var loop = Instantiate(inGameMusicLoop);
+        DontDestroyOnLoad(loop);
     }
     public void ApplicationQuit()
     {
@@ -53,24 +53,50 @@ public class MenuController : MonoBehaviour
         Debug.Log("Quit!");
     }
 
+    public void Pause()
+    {
+        if (pauseOn == true)
+        {
+            pauseOn = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            pauseOn = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void PauseOnWin()
+    {
+
+        pauseOn = false;
+        winMenu.SetActive(true);
+        Time.timeScale = 0f;
+
+
+    }
+
     public void PauseButton()
     {
-            if (pauseOn == true)
-            {
-                pauseOn = false;
-                pauseMenu.SetActive(false);
-                Time.timeScale = 1;
-            }
-            else
-            {
-                pauseOn = true;
-                pauseMenu.SetActive(true);
-                Time.timeScale = 0;
-            }
+        if (pauseOn == true)
+        {
+            pauseOn = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            pauseOn = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
     public void ResumeTime()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
     }
 
     public void MusicSlider(float volume)
