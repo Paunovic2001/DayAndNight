@@ -23,10 +23,7 @@ public class MenuController : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-        if (inGameMusicLoop.GetComponent<MusicLoop>().dontDestroyOnLoad == true)
-        {
-            DontDestroyOnLoad(inGameMusicLoop);
-        }
+        
         LoadVolume();
     }
     private void Update()
@@ -45,6 +42,7 @@ public class MenuController : MonoBehaviour
     public void InstantiateMusic()
     {
         var loop = Instantiate(inGameMusicLoop);
+        loop.GetComponent<AudioSource>().Play();
         DontDestroyOnLoad(loop);
     }
     public void ApplicationQuit()

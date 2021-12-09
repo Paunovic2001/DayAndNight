@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1945970852703054887}
   - component: {fileID: 1945970852703054880}
   - component: {fileID: 1945970852703054884}
+  - component: {fileID: 8696847580574709791}
   m_Layer: 6
   m_Name: NightExit
   m_TagString: DoorNight
@@ -145,3 +146,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUnlocked: 0
+--- !u!114 &8696847580574709791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945970852703054881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5daaa97a4a7c441ba8d2a67e047f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dayOnPortal: 0
+  nightOnPortal: 0
