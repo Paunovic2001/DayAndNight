@@ -9,15 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_menu.unity
     guid: d62e28e5e0bc1c848adf525ab8bc7c4c
   - enabled: 1
-    path: Assets/Antonio/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Lea/Scenes/Level1.unity
+    guid: f1d54410542698f488958c27700fd946
   - enabled: 1
-    path: Assets/Scenes/Level_1.unity
-    guid: 700614959cf1e1340bd3ba6bd79388a2
+    path: Assets/Lea/Scenes/Level2.unity
+    guid: 6bad75152a860ab4cb83762c14c6ff99
   - enabled: 1
-    path: Assets/Scenes/Level_2.unity
-    guid: c81d4b7de5defb74ea29f2aba939d3fb
+    path: Assets/Lea/Scenes/Level3.unity
+    guid: 650f6302741bd7e41a21a69266a92cc1
   - enabled: 1
-    path: Assets/Scenes/Level_3.unity
-    guid: b9b123acfbeb6b84889946997b274f35
+    path: Assets/Lea/Scenes/Level4.unity
+    guid: 86bc9b9c8d5436349bdba3f2d50aaa74
+  - enabled: 1
+    path: Assets/Lea/Scenes/Level5.unity
+    guid: 84e03ce89140ee5499a311826c72da7f
+  - enabled: 1
+    path: Assets/Lea/Scenes/Level6.unity
+    guid: 4762c55ad4b1658459b0d7b0e7fbb5f8
+  - enabled: 1
+    path: Assets/Lea/Scenes/Level7.unity
+    guid: 60561586a67b6cf419b8deb29441b2bb
+  - enabled: 1
+    path: Assets/Lea/Scenes/Level8.unity
+    guid: f2d028c18d911f34c8e43c0234b20767
+  - enabled: 1
+    path: Assets/Lea/Scenes/Level9.unity
+    guid: 7bbc44bae3490c045ae8e5e46fc3ca96
   m_configObjects: {}

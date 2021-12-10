@@ -81,7 +81,7 @@ MonoBehaviour:
   collider: {fileID: 0}
   passengerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
   localWaypoints:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

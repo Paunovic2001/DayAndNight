@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3264762681867641272}
   - component: {fileID: 1011255994}
   - component: {fileID: 1011255995}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: PlayerDay
   m_TagString: PlayerDay
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2579354027760154117}
   - component: {fileID: 4487226427463988888}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Head
   m_TagString: Head
   m_Icon: {fileID: 0}
