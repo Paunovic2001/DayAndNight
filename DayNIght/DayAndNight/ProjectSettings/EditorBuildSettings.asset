@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main_menu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: d62e28e5e0bc1c848adf525ab8bc7c4c
   - enabled: 1
     path: Assets/Lea/Scenes/Level1.unity
@@ -22,17 +22,26 @@ EditorBuildSettings:
     guid: 86bc9b9c8d5436349bdba3f2d50aaa74
   - enabled: 1
     path: Assets/Lea/Scenes/Level5.unity
-    guid: 84e03ce89140ee5499a311826c72da7f
+    guid: 9fbe39b1500da91478b679a97cf39a83
   - enabled: 1
     path: Assets/Lea/Scenes/Level6.unity
-    guid: 4762c55ad4b1658459b0d7b0e7fbb5f8
+    guid: 221646a322c0d174c9b29a1dce2377b3
   - enabled: 1
     path: Assets/Lea/Scenes/Level7.unity
-    guid: 60561586a67b6cf419b8deb29441b2bb
+    guid: 787bf9822be1453449e198f5a25ef3a3
   - enabled: 1
     path: Assets/Lea/Scenes/Level8.unity
-    guid: f2d028c18d911f34c8e43c0234b20767
+    guid: 84e03ce89140ee5499a311826c72da7f
   - enabled: 1
     path: Assets/Lea/Scenes/Level9.unity
+    guid: 4762c55ad4b1658459b0d7b0e7fbb5f8
+  - enabled: 1
+    path: Assets/Lea/Scenes/Level10.unity
+    guid: 60561586a67b6cf419b8deb29441b2bb
+  - enabled: 1
+    path: Assets/Lea/Scenes/Level11.unity
+    guid: f2d028c18d911f34c8e43c0234b20767
+  - enabled: 1
+    path: Assets/Lea/Scenes/Level12.unity
     guid: 7bbc44bae3490c045ae8e5e46fc3ca96
   m_configObjects: {}

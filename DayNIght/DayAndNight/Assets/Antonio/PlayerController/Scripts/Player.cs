@@ -159,6 +159,7 @@ public class Player : MonoBehaviour
     public void Respawn()
     {
         Debug.Log("respawn");
+        FindObjectOfType<AudioManager>().PlayPlayerDeathSFX();
         transform.position = spawnPos;
     }
 }

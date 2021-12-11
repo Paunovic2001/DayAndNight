@@ -28,6 +28,7 @@ public class Key : MonoBehaviour
         {
             door.GetComponent<ExitDoor>().isUnlocked = true;
             door.GetComponent<SpriteRenderer>().sprite = doorOn;
+            FindObjectOfType<AudioManager>().PlayKeyCollectSFX();
             this.gameObject.SetActive(false);
         }
     }

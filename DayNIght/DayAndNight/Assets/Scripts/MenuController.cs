@@ -17,17 +17,31 @@ public class MenuController : MonoBehaviour
     public Slider audioSlider;
     public Text audioSliderText;
 
-    public AudioSource musicAS;
     public AudioSource audioAS;
+
+    private AudioManager am;
 
     private void Start()
     {
+        am = FindObjectOfType<AudioManager>();
+
+        if (!PlayerPrefs.HasKey("musicVolume")) { PlayerPrefs.SetFloat("musicVolume", 1.0f); }
+        if (!PlayerPrefs.HasKey("audioVolume")) { PlayerPrefs.SetFloat("audioVolume", 1.0f); }
+
+        am.PlayMenuMusic();
+
         Time.timeScale = 1f;
         
-        //LoadVolume();
+        LoadVolume();
     }
+
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            PlayerPrefs.SetInt("thisLevel", 99999);
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             PlayerPrefs.DeleteAll();
@@ -41,10 +55,12 @@ public class MenuController : MonoBehaviour
 
     public void InstantiateMusic()
     {
-        var loop = Instantiate(inGameMusicLoop);
-        loop.GetComponent<AudioSource>().Play();
-        DontDestroyOnLoad(loop);
+        am.PlayLevelMusic();
+        //var loop = Instantiate(inGameMusicLoop);
+        //loop.GetComponent<AudioSource>().Play();
+        //DontDestroyOnLoad(loop);
     }
+
     public void ApplicationQuit()
     {
         Application.Quit();
@@ -92,6 +108,7 @@ public class MenuController : MonoBehaviour
             Time.timeScale = 0f;
         }
     }
+
     public void ResumeTime()
     {
         Time.timeScale = 1f;
@@ -101,12 +118,16 @@ public class MenuController : MonoBehaviour
     {
         musicSliderText.text = volume.ToString("0.0");
         PlayerPrefs.SetFloat("musicText", volume);
+
+        am.SetMusicVolume(volume);
     }
 
     public void AudioSlider(float volume)
     {
         audioSliderText.text = volume.ToString("0.0");
         PlayerPrefs.SetFloat("audioText", volume);
+
+        am.SetSFXVolume(volume);
     }
 
     public void SaveVolume()
@@ -117,15 +138,18 @@ public class MenuController : MonoBehaviour
         PlayerPrefs.SetFloat("audioVolume", audio);
         LoadVolume();
     }
+
     void LoadVolume()
     {
         float music = PlayerPrefs.GetFloat("musicVolume");
         float audio = PlayerPrefs.GetFloat("audioVolume");
 
-        musicSlider.value = music;
-        audioSlider.value = audio;
+        am.SetMusicVolume(music);
+        am.SetSFXVolume(audio);
 
-        musicAS.volume = music;
-        audioAS.volume = audio;
+        if (musicSlider) { musicSlider.value = music; }
+        if (audioSlider) { audioSlider.value = audio; }
+
+        if (audioAS) { audioAS.volume = audio; }
     }
 }

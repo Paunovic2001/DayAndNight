@@ -7,12 +7,6 @@ public class WinCheck : MonoBehaviour
     public bool dayOnPortal = false;
     public bool nightOnPortal = false;
     bool endOfGame = false;
-    MenuController mc;
-
-    private void Start()
-    {
-        mc = FindObjectOfType<MenuController>();
-    }
 
     private void Update()
     {
@@ -20,7 +14,8 @@ public class WinCheck : MonoBehaviour
         {
             //play a sound 
             Debug.Log("Level end");
-            mc.PauseOnWin();
+            FindObjectOfType<LevelMenu>().OnWin();
+            FindObjectOfType<AudioManager>().PlayLevelWinSFX();
             endOfGame = true;
         }
     }
