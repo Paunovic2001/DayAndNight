@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
+//using UnityEngine.Animations;
 
 public class AnimationSelector : MonoBehaviour
 {
@@ -9,10 +9,13 @@ public class AnimationSelector : MonoBehaviour
     Player player;
     Animator animator;
     public float stationaryTreshold = 0.01f;
-    public UnityEditor.Animations.AnimatorController run;
-    public UnityEditor.Animations.AnimatorController idle;
-    public UnityEditor.Animations.AnimatorController jump;
-    public UnityEditor.Animations.AnimatorController fall;
+
+    // we can't use "UnityEditor.Animations.AnimatorController" so we use "RuntimeAnimatorController"
+
+    public RuntimeAnimatorController run;
+    public RuntimeAnimatorController idle;
+    public RuntimeAnimatorController jump;
+    public RuntimeAnimatorController fall;
 
     private void Start()
     {

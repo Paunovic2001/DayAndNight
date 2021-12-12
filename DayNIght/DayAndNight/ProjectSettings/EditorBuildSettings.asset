@@ -27,11 +27,11 @@ EditorBuildSettings:
     path: Assets/Lea/Scenes/Level6.unity
     guid: 221646a322c0d174c9b29a1dce2377b3
   - enabled: 1
+    path: Assets/Lea/Scenes/Level8.unity
+    guid: 929f2cbf225c8ae4584244ae7668c94e
+  - enabled: 1
     path: Assets/Lea/Scenes/Level7.unity
     guid: 787bf9822be1453449e198f5a25ef3a3
-  - enabled: 1
-    path: Assets/Lea/Scenes/Level8.unity
-    guid: 84e03ce89140ee5499a311826c72da7f
   - enabled: 1
     path: Assets/Lea/Scenes/Level9.unity
     guid: 4762c55ad4b1658459b0d7b0e7fbb5f8
@@ -40,7 +40,7 @@ EditorBuildSettings:
     guid: 60561586a67b6cf419b8deb29441b2bb
   - enabled: 1
     path: Assets/Lea/Scenes/Level11.unity
-    guid: f2d028c18d911f34c8e43c0234b20767
+    guid: d4756113c2c8d27418528db847f4ecc6
   - enabled: 1
     path: Assets/Lea/Scenes/Level12.unity
     guid: 7bbc44bae3490c045ae8e5e46fc3ca96
