@@ -16,6 +16,9 @@ public class PlatformController : RaycastController
     [Range(0, 2)]
     public float easeAmount;
     public bool isMoving = false;
+    public bool isAttached = false;
+    KeyCode jump;
+    Player player;
 
     int fromWaypointIndex;
     float percentBetweenWaypoints;
@@ -39,18 +42,37 @@ public class PlatformController : RaycastController
     {
 
         UpdateRaycastOrigins();
-
-        //Vector3 velocity = CalculatePlatformMovement();
         Vector3 velocity;
 
-
+        //Vector3 velocity = CalculatePlatformMovement();
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Debug.Log("pressed, " + isAttached);
+        }
+        if (player != null)
+        {
+            if (isAttached == true && Input.GetKey(jump) || player.velocity.y != 0)
+            {
+                transform.DetachChildren();
+                Debug.Log("Dettached");
+                isAttached = false;
+                player = null;
+            }
+            if (Vector2.Distance(player.gameObject.transform.position, transform.position) > GetComponent<Collider2D>().bounds.extents.x + 0.4710145f - 0.1f)
+            {
+                transform.DetachChildren();
+                Debug.Log("Dettached, extents: " + GetComponent<Collider2D>().bounds.extents.x + ", distance:" + Vector2.Distance(player.gameObject.transform.position, transform.position));
+                isAttached = false;
+                player = null;
+            }
+        }
         if (isMoving)
         {
             velocity = CalculatePlatformMovement();
-            CalculatePassengerMovement(velocity);
-            MovePassengers(true);
+            //CalculatePassengerMovement(velocity);
+            //MovePassengers(true);
             transform.Translate(velocity);
-            MovePassengers(false);
+            //MovePassengers(false);
         }
         //foreach(var passenger in passengerMovement)
         //      {
@@ -200,6 +222,27 @@ public class PlatformController : RaycastController
         }
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "PlayerDay" || collision.tag == "PlayerNight")
+        {
+            collision.transform.SetParent(transform);
+            Debug.Log("Attached");
+            isAttached = true;
+            jump = collision.transform.GetComponent<PlayerInput>().GetKeyJump();
+            player = collision.transform.GetComponent<Player>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if ((collision.tag == "PlayerDay" || collision.tag == "PlayerNight") && collision.GetComponent<Player>().velocity.y != 0)
+        {
+                transform.DetachChildren();
+                Debug.Log("Dettached");
+        }
+    }
     struct PassengerMovement
     {
         public Transform transform;

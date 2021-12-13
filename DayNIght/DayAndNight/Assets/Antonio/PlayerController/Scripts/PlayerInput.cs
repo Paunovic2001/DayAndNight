@@ -52,4 +52,8 @@ public class PlayerInput : MonoBehaviour {
 			player.OnJumpInputUp ();
 		}
 	}
+	public KeyCode GetKeyJump()
+    {
+		return up;
+    }
 }

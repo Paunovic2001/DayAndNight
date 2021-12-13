@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3229824301508385407}
   - component: {fileID: 3229824301508385400}
   - component: {fileID: 3229824301508385406}
+  - component: {fileID: 1684075941622332692}
+  - component: {fileID: 1638997249903801135}
   m_Layer: 0
   m_Name: PlatformDay
   m_TagString: Untagged
@@ -26,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3229824301508385402}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 29, y: 4.61, z: 0.015625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -84,12 +86,13 @@ MonoBehaviour:
     m_Bits: 128
   localWaypoints:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: -2.5, y: -2, z: 0}
   speed: 2
   cyclic: 0
   waitTime: 1.5
   easeAmount: 0
   isMoving: 0
+  isAttached: 0
 --- !u!212 &3229824301508385406
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -141,3 +144,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &1684075941622332692
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3229824301508385402}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.7145457, y: -0.009848312}
+  - {x: -0.6246395, y: 0.12636717}
+  - {x: 0.63671064, y: 0.12992331}
+  - {x: 0.713881, y: -0.023272112}
+  - {x: -0.7193675, y: -0.009848312}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!50 &1638997249903801135
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3229824301508385402}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
