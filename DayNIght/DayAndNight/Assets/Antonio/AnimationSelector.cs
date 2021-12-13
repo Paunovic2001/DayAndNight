@@ -9,6 +9,7 @@ public class AnimationSelector : MonoBehaviour
     Player player;
     Animator animator;
     public float stationaryTreshold = 0.01f;
+    public bool isGoindDownOnPlatform = false;
 
     // we can't use "UnityEditor.Animations.AnimatorController" so we use "RuntimeAnimatorController"
 
@@ -37,9 +38,10 @@ public class AnimationSelector : MonoBehaviour
                 sr.flipX = true;
             }
             animator.runtimeAnimatorController = jump;
+            isGoindDownOnPlatform = false;
         }
         
-        if (player.velocity.y < 0)
+        if (player.velocity.y < 0 && isGoindDownOnPlatform == false)
         {
             if (player.velocity.x > 0)
             {
@@ -56,18 +58,21 @@ public class AnimationSelector : MonoBehaviour
         {
             sr.flipX = false;
             animator.runtimeAnimatorController = run;
+            isGoindDownOnPlatform = false;
         }
         
         if (player.velocity.x < -stationaryTreshold && player.velocity.y == 0)
         {
             sr.flipX = true;
             animator.runtimeAnimatorController = run;
+            isGoindDownOnPlatform = false;
         }
         
 
         if ( (player.velocity.x < stationaryTreshold && player.velocity.x > -stationaryTreshold) && (player.velocity.y < stationaryTreshold && player.velocity.y > -stationaryTreshold) )
         {
             animator.runtimeAnimatorController = idle;
+            isGoindDownOnPlatform = false;
         }
     }
 

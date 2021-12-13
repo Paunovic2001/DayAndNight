@@ -113,6 +113,7 @@ public class PlatformController : RaycastController
             {
                 passengerDictionary[passenger.transform].Move(passenger.velocity, passenger.standingOnPlatform);
             }
+            passenger.transform.GetComponent<AnimationSelector>().isGoindDownOnPlatform = true;
         }
     }
 
