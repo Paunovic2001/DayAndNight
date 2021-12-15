@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinCheck : MonoBehaviour
 {
@@ -12,11 +13,11 @@ public class WinCheck : MonoBehaviour
     {
         if (dayOnPortal == true && nightOnPortal == true && endOfGame == false)
         {
-            //play a sound 
             Debug.Log("Level end");
             FindObjectOfType<LevelMenu>().OnWin();
             FindObjectOfType<AudioManager>().PlayLevelWinSFX();
             endOfGame = true;
+            PlayerPrefs.SetInt("thisLevel", SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

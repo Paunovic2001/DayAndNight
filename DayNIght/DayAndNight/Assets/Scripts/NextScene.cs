@@ -30,7 +30,7 @@ public class NextScene : MonoBehaviour
         }
         else if (nextScene > PlayerPrefs.GetInt("thisLevel"))
         {
-            PlayerPrefs.SetInt("thisLevel", nextScene);
+            //PlayerPrefs.SetInt("thisLevel", nextScene);
         }
     }
 }
